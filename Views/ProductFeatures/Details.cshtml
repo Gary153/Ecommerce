@@ -1,0 +1,50 @@
+﻿@model Ecommerce.Models.ProductFeature
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductFeature</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Feature.FeatureName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feature.FeatureName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureOption.FeatureOptionsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatureOption.FeatureOptionsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeaturePriceIncrement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeaturePriceIncrement)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductFeatureId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

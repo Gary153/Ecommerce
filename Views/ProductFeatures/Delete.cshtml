@@ -1,0 +1,56 @@
+﻿@model Ecommerce.Models.ProductFeature
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductFeature</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Feature.FeatureName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feature.FeatureName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureOption.FeatureOptionsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatureOption.FeatureOptionsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeaturePriceIncrement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeaturePriceIncrement)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

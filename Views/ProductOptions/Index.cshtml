@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductOption>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Option.OptionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OptionGroup.OptionGroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OptionPriceIncrement)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option.OptionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OptionGroup.OptionGroupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OptionPriceIncrement)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductOptionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductOptionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductOptionId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductFeature>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Feature.FeatureName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeatureOption.FeatureOptionsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeaturePriceIncrement)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feature.FeatureName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FeatureOption.FeatureOptionsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FeaturePriceIncrement)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductFeatureId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductFeatureId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductFeatureId })
+        </td>
+    </tr>
+}
+
+</table>
